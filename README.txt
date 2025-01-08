@@ -1,1 +1,0 @@
-This is a calculator in java and is only meant for learning purposes.
