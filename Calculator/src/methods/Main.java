@@ -1,54 +1,66 @@
 package methods;
 
-import java.io.File;
-import java.util.Scanner;
+import java.awt.Color;
+import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.border.Border;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		// JFrame = a GUI window to add components to
+		CalculatorGUI calc = new CalculatorGUI();
 
-		// creates a frame
-		JFrame frame = new JFrame();
-
-		// setting size
-		frame.setSize(500, 500);
-		// sets title of frame
-		frame.setTitle("Calculator");
-		// exist out of application
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		// make frame visible
-		frame.setVisible(true);
-
-		// creates an Icon for the frame, upper left corner
-		ImageIcon image = new ImageIcon("calculator.png");
-		
-		//change the Icon of the frame
-		frame.setIconImage(image.getImage()); 
-
-		Scanner input = new Scanner(System.in);
-
-		
-
-		File file = new File("calculator.png");
-		if (!file.exists()) {
-		    System.out.println("❌ Bild nicht gefunden: " + file.getAbsolutePath());
-		} else {
-		    System.out.println("✅ Bild gefunden: " + file.getAbsolutePath());
-		}
-
-		
-		
-//		int ersteZahl = input.nextInt();
-//		int zweiteZahl = input.nextInt();
-
-//		Calculate cal = new Calculate(ersteZahl, zweiteZahl);
-
+//		// JFrame = a GUI window to add components to
+//
+//		// creates a frame
+//		JFrame frame = new JFrame();
+//
+//		// setting size
+//		frame.setSize(1000, 1000);
+//		// sets title of frame
+//		frame.setTitle("Calculator");
+//		// exist out of application
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//		// sets a new image as an Icon using the file path or the name if it is in the
+//		// same directory
+//		ImageIcon image = new ImageIcon(Main.class.getResource("/res/calculator.png"));
+//		frame.setIconImage(image.getImage()); // change icon of frame
+//
+//		frame.getContentPane().setBackground(Color.LIGHT_GRAY); // change background color
+//
+//		// JLabel = a GUI display area for a string of text, an image, or both
+//
+//		JLabel label = new JLabel(); // create a label
+//		label.setText("Bro, do you even code?"); // set text of label
+//
+//		frame.add(label);
+//		label.setIcon(image);
+//		label.setHorizontalTextPosition(JLabel.CENTER); // Options as input: Jlabel.left, Jlabel.center, Jlabel.right,
+//														// these sets the text (label) in the position we want
+//														// horizontally
+//
+//		label.setVerticalTextPosition(JLabel.TOP); // sets text TOP, CENTER, BOTTOM, of imageIcon
+//		label.setForeground(Color.black); // set font color of text
+//		label.setFont(new Font("MV Boli", Font.PLAIN, 20)); // set font of text
+//		label.setIconTextGap(20); // set gap between the text and the image
+//		label.setBackground(Color.white); // set background color
+//		label.setOpaque(true); // display background color, if this is false then the background color is not
+//								// displayed
+//		Border border = BorderFactory.createLineBorder(Color.blue, 3); // create border (Rahmen)
+//
+//		label.setBorder(border); //
+//
+//		label.setVerticalAlignment(JLabel.CENTER); // set vertical position of icon+Text within label
+//		label.setHorizontalAlignment(JLabel.CENTER); // set horizontal position of icon+Text within label
+//
+//		// make frame visible
+//		frame.setVisible(true);
 	}
 
 }
