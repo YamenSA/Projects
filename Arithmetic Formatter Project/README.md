@@ -29,3 +29,18 @@ print(arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 
 -----    -----    ----    -----    -----
   859      907      88      172      928
 ```
+
+## 📌 Verwendung
+1. Stelle sicher, dass Python installiert ist.
+2. Öffne das Projekt in VS Code oder einem beliebigen Editor.
+3. Führe arithmetic_formatter.py aus:
+
+```bash 
+python arithmetic_formatter.py
+```
+
+## ⚠️ Einschränkungen
+- Multiplikation (*) und Division (/) sind nicht erlaubt
+- Mehr als 5 Aufgaben führen zu einem Fehler
+- Die Formatierung erfolgt ohne Lösung, außer show_answers=True
+
