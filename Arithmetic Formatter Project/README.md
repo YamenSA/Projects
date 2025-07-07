@@ -1,6 +1,6 @@
 # 🧮 Arithmetic Formatter (freeCodeCamp Projekt)
 
-Dieses Projekt ist die Lösung zur Übung **"Arithmetic Formatter"** aus dem Python-Kurs von [freeCodeCamp](https://www.freecodecamp.org/learn).  
+Dieses Projekt ist die Lösung zur Übung **"Arithmetic Formatter"** aus dem Python-Kurs von [freeCodeCamp](hhttps://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project).  
 Die Aufgabe besteht darin, mehrere einfache Rechenaufgaben sauber nebeneinander zu formatieren – optional mit Ergebnissen.
 
 ---
