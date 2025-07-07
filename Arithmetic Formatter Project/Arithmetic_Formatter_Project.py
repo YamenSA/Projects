@@ -1,25 +1,3 @@
-"""
-arithmetic_formatter.py
-
-Autor: [Dein Name oder GitHub-Handle]
-Beschreibung:
-    Dieses Skript implementiert die Lösung für das "Arithmetic Formatter"-Problem aus dem freeCodeCamp Python-Kurs.
-    Die Funktion `arithmetic_arranger` formatiert eine Liste von Rechenaufgaben in Spaltenform mit optionaler Lösung.
-    Unterstützte Operatoren: '+' und '-'.
-    Es werden diverse Eingabevalidierungen durchgeführt, z. B. max. 5 Aufgaben, nur Ziffern, max. 4-stellige Zahlen.
-
-Funktionen:
-    - arithmetic_arranger(problems, show_answers=False)
-    - operator_checker(problems)
-    - digit_checker(problems)
-    - digit_length_checker(problems)
-
-Beispiel:
-    arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], show_answers=True)
-
-"""
-
-
 def arithmetic_arranger(problems, show_answers=False):
     # Zeileninhalte vorbereiten
     sorted = []
