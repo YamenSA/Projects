@@ -44,3 +44,7 @@ python arithmetic_formatter.py
 - Mehr als 5 Aufgaben führen zu einem Fehler
 - Die Formatierung erfolgt ohne Lösung, außer show_answers=True
 
+## ✍️ Autor
+Yamen Sandakli
+Dieses Projekt wurde im Rahmen des Python-Kurses von freeCodeCamp.org umgesetzt.
+
