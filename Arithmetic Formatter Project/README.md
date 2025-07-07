@@ -45,6 +45,6 @@ python arithmetic_formatter.py
 - Die Formatierung erfolgt ohne Lösung, außer show_answers=True
 
 ## ✍️ Autor
-Yamen Sandakli
-Dieses Projekt wurde im Rahmen des Python-Kurses von freeCodeCamp.org umgesetzt.
+- Yamen Sandakli
+- Dieses Projekt wurde im Rahmen des Python-Kurses von freeCodeCamp.org umgesetzt.
 
