@@ -1,6 +1,6 @@
 # 🧮 Arithmetic Formatter (freeCodeCamp Projekt)
 
-Dieses Projekt ist die Lösung zur Übung **"Arithmetic Formatter"** aus dem Python-Kurs von [freeCodeCamp](hhttps://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project).  
+Dieses Projekt ist die Lösung zur Übung **"Arithmetic Formatter"** aus dem Python-Kurs von [freeCodeCamp](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project).  
 Die Aufgabe besteht darin, mehrere einfache Rechenaufgaben sauber nebeneinander zu formatieren – optional mit Ergebnissen.
 
 ---
@@ -22,11 +22,9 @@ Die Aufgabe besteht darin, mehrere einfache Rechenaufgaben sauber nebeneinander 
 ```python
 from arithmetic_formatter import arithmetic_arranger
 
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], show_answers=True))
+print(arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40"], show_answers=True))
 
-   32      3801      45      123
-+ 698    -    2    +  43    +  49
------    ------    ----    -----
-  730      3799     88      172
-
+   44      909      45      123      888
++ 815    -   2    + 43    +  49    +  40
+-----    -----    ----    -----    -----
 ```
