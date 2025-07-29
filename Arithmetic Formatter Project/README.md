@@ -39,6 +39,20 @@ python arithmetic_formatter.py
 
 ---
 
+## 🧠 Verwendete Python-Konzepte
+
+In diesem Projekt habe ich folgende Konzepte praktisch angewendet:
+
+- **Funktionen**: Aufteilung in einzelne Aufgaben (z. B. Eingabeprüfung, Formatierung)
+- **String-Manipulation**: Nutzung von `.split()`, `.rjust()`, `.join()` zur Formatierung
+- **Listen & Schleifen**: Dynamisches Verarbeiten beliebiger Aufgaben
+- **Bedingungen (`if`/`else`)**: Validierungslogik und optionale Ergebnisanzeige
+- **Fehlerbehandlung durch Rückgabewerte**: Rückgabe von Fehlermeldungen bei ungültiger Eingabe
+- **Modularer Code**: Klar strukturierte Funktionsaufteilung für bessere Lesbarkeit
+- **Hauptprogrammsteuerung**: Verwendung von `if __name__ == "__main__"` zur direkten Ausführung
+
+Diese Konzepte habe ich bewusst eingesetzt, um mein Verständnis für strukturiertes Programmieren in Python zu vertiefen.
+
 ## 🛠️ Hintergrund
 
 Das Projekt entstand als Übung zur Verbesserung meiner Python-Kenntnisse in Bezug auf String-Manipulation, Eingabevalidierung und funktionale Struktur.  
@@ -51,6 +65,7 @@ Die Idee basiert auf einer Aufgabenstellung von [freeCodeCamp](https://www.freec
 **Yamen Sandakli**
 
 Weitere Ideen zur Weiterentwicklung:
+
 - Unterstützung weiterer Operatoren (×, ÷)
 - Kommandozeilenargumente für flexible Nutzung
 - Web-Interface zur Visualisierung
