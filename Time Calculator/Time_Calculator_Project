@@ -1,0 +1,38 @@
+def add_time(start, duration, day=""):
+    new_time = 0
+    # split the start parameter into a list
+    start_list = start.split()
+    # split the time in the start parameter into a list
+    time_in_start_list = start_list[0].split(":")
+    # the hours only in the start parametet
+    hour_in_start = int(time_in_start_list[0])
+    # the minutes only in the start parameter
+    minutes_in_start = time_in_start_list[1]
+
+    # split the duration parameter into a list
+    duration_list = duration.split(":")
+
+    hours_in_duration = duration_list[0]
+    minutes_in_duration = duration_list[1]
+
+    if "PM" in start:
+        new_hour = (
+            str(int(hour_in_start) + int(hours_in_duration))
+            + ":"
+            + str(int(minutes_in_start) + int(minutes_in_duration))
+        )
+        result = new_hour.split(":")
+        if int(result[0]) > 12:
+
+            new_time = int(result[0]) % 12
+        else:
+            new_time = int(result[0])
+
+    return new_time
+
+
+def main():
+    print(add_time("11:43 PM", "00:20"))
+
+
+main()
