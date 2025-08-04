@@ -4,53 +4,39 @@ def add_time(start, duration, day=""):
     start_list = start.split()
     # split the time in the start parameter into a list through ':' notation e.g. '3:00' -> ['3', '00']
     time_in_start_list = start_list[0].split(":")
+    # the minutes only in the start parameter -> '00' -> 0 in int
+    minutes_in_start = int(time_in_start_list[1])
     # the hours only in the start parameter -> turn the hour i.e. 3 into int
-    hour_in_start = time_in_start_list[0]
-    # the minutes only in the start parameter -> '00' in str
-    minutes_in_start = time_in_start_list[1]
+    hours_in_start = int(time_in_start_list[0]) * 60 + minutes_in_start
 
     # split the duration parameter into a list-> the same as we did with the start time
     duration_list = duration.split(":")
 
-    # the hours only in the duration parameter e.g. '3:10' -> '3' in str
-    hours_in_duration = duration_list[0]
     # the minutes only in the duration parameter e.g. '3:10' -> '10' in str
-    minutes_in_duration = duration_list[1]
+    minutes_in_duration = int(duration_list[1])
+    # the hours only in the duration parameter e.g. '3:10' -> '3' in str
+    hours_in_duration = int(duration_list[0]) * 60 + minutes_in_duration
 
-    new_hour = int(hour_in_start) + int(hours_in_duration)
-    new_minutes = int(minutes_in_start) + int(minutes_in_duration)
+    total_minutes = hours_in_start + hours_in_duration
+    new_hour = total_minutes // 60
+    new_minutes = total_minutes % 60
+    days = new_hour // 24
 
-    if new_minutes >= 60 or new_minutes < 60:
-        hours_to_add = new_minutes // 60
-        remmainig_minutes = new_minutes - (hours_to_add * 60)
-        new_hour += hours_to_add
-        if "PM" in start:
-            if new_hour > 12:
-                rest = new_hour % 12
-                if len(str(remmainig_minutes)) < 2:
-                    new_time = str(rest) + ":" + "0" + str(remmainig_minutes) + " AM"
-                else:
-                    new_time = str(rest) + ":" + str(remmainig_minutes) + " AM"
-            elif new_hour == 12:
-                if len(str(remmainig_minutes)) < 2:
-                    new_time = "12" + ":" + "0" + str(remmainig_minutes) + " AM"
-                else:
-                    new_time = "12" + ":" + str(remmainig_minutes) + " AM"
-            elif new_hour < 12:
-                rest = new_hour
-                if len(str(remmainig_minutes)) < 2:
-                    new_time = str(rest) + ":" + "0" + str(remmainig_minutes) + " PM"
-                else:
-                    new_time = str(rest) + ":" + str(remmainig_minutes) + " PM"
+    
+        
 
-    return new_time
+
+
+    return new_minutes
 
 
 def main():
-    print(add_time("10:58 PM", "1:01"))
+    print(add_time("23:43 PM", "2:20"))
     # start = "3:00 PM"
     # hours = start.split()
     # print(start.split())
 
 
 main()
+
+
