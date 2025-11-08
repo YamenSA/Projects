@@ -6,8 +6,22 @@ def add_time(start, duration, day=""):
     time_in_start_list = start_list[0].split(":")
     # the minutes only in the start parameter -> '00' -> 0 in int
     minutes_in_start = int(time_in_start_list[1])
+    
+    # get the hour number from the start time
+    hour_number_start = int(time_in_start_list[0])
+    # get the AM or PM string
+    am_or_pm = start_list[1]
+
+    # check if it is PM, we need to add 12 hours
+    if am_or_pm == "PM" and hour_number_start != 12:
+        hour_number_start = hour_number_start + 12
+    # check if it is 12 AM (midnight), it should be 0
+    if am_or_pm == "AM" and hour_number_start == 12:
+        hour_number_start = 0
+
     # the hours only in the start parameter -> turn the hour i.e. 3 into int
-    hours_in_start = int(time_in_start_list[0]) * 60 + minutes_in_start
+    # this variable now holds the total minutes from midnight
+    hours_in_start = hour_number_start * 60 + minutes_in_start
 
     # split the duration parameter into a list-> the same as we did with the start time
     duration_list = duration.split(":")
@@ -15,28 +29,80 @@ def add_time(start, duration, day=""):
     # the minutes only in the duration parameter e.g. '3:10' -> '10' in str
     minutes_in_duration = int(duration_list[1])
     # the hours only in the duration parameter e.g. '3:10' -> '3' in str
+    # this variable holds the total minutes of the duration
     hours_in_duration = int(duration_list[0]) * 60 + minutes_in_duration
 
+    # add the start minutes and duration minutes
     total_minutes = hours_in_start + hours_in_duration
-    new_hour = total_minutes // 60
-    new_minutes = total_minutes % 60
-    days = new_hour // 24
-
     
+    # find out how many days have passed
+    # 1440 minutes in one day (24 * 60)
+    days = total_minutes // 1440
+    
+    # find the minutes left over for the last day
+    minutes_left_over = total_minutes % 1440
+    
+    # get the new hour from the leftover minutes
+    new_hour = minutes_left_over // 60
+    # get the new minutes from the leftover minutes
+    new_minutes = minutes_left_over % 60
+    
+    # --- Now format the new time back to 12-hour clock ---
+    
+    # check if the new hour is AM or PM
+    new_am_pm = "AM"
+    if new_hour >= 12:
+        new_am_pm = "PM"
         
+    # convert the hour from 24-hour to 12-hour
+    if new_hour > 12:
+        new_hour = new_hour - 12
+    
+    # if new_hour is 0, it should be 12 AM
+    if new_hour == 0:
+        new_hour = 12
+        
+    # convert new_minutes to a string
+    new_minutes_str = str(new_minutes)
+    # add a '0' if the minutes are less than 10 (e.g., 7:05)
+    if new_minutes < 10:
+        new_minutes_str = "0" + new_minutes_str
+        
+    # put the final time string together
+    new_time = str(new_hour) + ":" + new_minutes_str + " " + new_am_pm
+    
+    # --- Handle the day of the week (optional) ---
+    if day != "":
+        # list of the days
+        week_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        
+        # make the input day look nice (e.g., "monday" -> "Monday")
+        clean_day = day.title()
+        
+        # find the index of the start day
+        start_day_index = 0
+        for i in range(len(week_days)):
+            if week_days[i] == clean_day:
+                start_day_index = i
+                break # stop the loop
+        
+        # find the index of the new day
+        new_day_index = (start_day_index + days) % 7
+        
+        # get the name of the new day
+        new_day_name = week_days[new_day_index]
+        
+        # add the day name to the time string
+        new_time = new_time + ", " + new_day_name
+        
+    # --- Handle the (days later) part ---
+    
+    # if it is one day later
+    if days == 1:
+        new_time = new_time + " (next day)"
+    # if it is more than one day later
+    elif days > 1:
+        new_time = new_time + " (" + str(days) + " days later)"
 
-
-
-    return new_minutes
-
-
-def main():
-    print(add_time("23:43 PM", "2:20"))
-    # start = "3:00 PM"
-    # hours = start.split()
-    # print(start.split())
-
-
-main()
-
-
+    # return the final string
+    return new_time
